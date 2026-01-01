@@ -8,16 +8,13 @@ import Footer from "./components/Footer.jsx";
 
 const App = () => {
     return (
-        <div>
-            <>
-                <Navbar />
-                <Hero />
-                <Project />
-                <Services />
-                <About />
-                <Footer />
-
-            </>
+        <div className="min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+            <Navbar />
+            <Hero />
+            <Project />
+            <Services />
+            <About />
+            <Footer />
         </div>
     )
 }

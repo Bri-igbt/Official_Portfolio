@@ -1,5 +1,6 @@
 import React from "react";
 import { Code2, Box } from "lucide-react";
+import Title from "./Title.jsx";
 
 const services = [
     {
@@ -18,15 +19,10 @@ const services = [
 
 const Services = () => {
     return (
-        <section id='/services' className="bg-gray-50 py-24">
+        <section id='/services' className="bg-gray-50 dark:bg-gray-950 transition-colors duration-300 py-24">
             <div className="max-w-7xl mx-auto px-6">
-                {/* Section Title */}
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-gray-900">Services</h2>
-                    <div className="mx-auto mt-3 h-1 w-20 bg-teal-500" />
-                </div>
+                <Title title="Services" />
 
-                {/* Cards */}
                 <div className="flex flex-wrap justify-center gap-10">
                     {services.map((service, index) => {
                         const Icon = service.icon;
@@ -34,26 +30,22 @@ const Services = () => {
                         return (
                             <div
                                 key={index}
-                                className="max-w-md w-full rounded-3xl p-10 text-center bg-white shadow-md transition-transform duration-300 hover:scale-105"
+                                className="max-w-md w-full rounded-3xl p-10 text-center bg-white dark:bg-gray-800 shadow-md transition-all duration-300 hover:scale-105"
                             >
-                                {/* Icon */}
                                 <div className="flex justify-center mb-6">
                                     <Icon
                                         size={48}
-                                        className="text-black animate-zoom"
+                                        className="text-gray-900 dark:text-gray-100 animate-zoom"
                                     />
                                 </div>
 
-                                {/* Title */}
-                                <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
                                     {service.title}
                                 </h3>
 
-                                {/* Divider */}
-                                <div className="mx-auto mb-6 h-1 w-12 bg-teal-500" />
+                                <div className="mx-auto mb-6 h-1 w-12 bg-teal-600 dark:bg-teal-500" />
 
-                                {/* Description */}
-                                <p className="leading-relaxed text-gray-600">
+                                <p className="leading-relaxed text-gray-600 dark:text-gray-300">
                                     {service.description}
                                 </p>
                             </div>
@@ -62,21 +54,20 @@ const Services = () => {
                 </div>
             </div>
 
-            {/* Zoom Animation */}
             <style>
                 {`
-          @keyframes zoom {
-            0%, 100% {
-              transform: scale(1);
-            }
-            50% {
-              transform: scale(1.15);
-            }
-          }
-          .animate-zoom {
-            animation: zoom 2s ease-in-out infinite;
-          }
-        `}
+                  @keyframes zoom {
+                    0%, 100% {
+                      transform: scale(1);
+                    }
+                    50% {
+                      transform: scale(1.15);
+                    }
+                  }
+                  .animate-zoom {
+                    animation: zoom 2s ease-in-out infinite;
+                  }
+                `}
             </style>
         </section>
     );
